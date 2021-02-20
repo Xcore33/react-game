@@ -1,0 +1,66 @@
+import React from "react";
+import "./GameBoard.css";
+import paperIcon from "../../assets/images/paper.png";
+import scissorsIcon from "../../assets/images/scissors.png";
+import rockIcon from "../../assets/images/rock.png";
+import { withRouter } from "react-router-dom";
+import Roll from "react-reveal/Roll";
+
+function GameBoard(props) {
+  const returnImageComponent = (component) => {
+    switch (component) {
+      case "paper":
+        return (
+          <img
+            src={paperIcon}
+            className={`circleIcon ${props.source}`}
+            alt={"paper"}
+          />
+        );
+
+      case "scissors":
+        return (
+          <img
+            src={scissorsIcon}
+            className={`circleIcon ${props.source}`}
+            alt={"scissors"}
+          />
+        );
+
+      case "rock":
+        return (
+          <img
+            src={rockIcon}
+            className={`circleIcon ${props.source}`}
+            alt={"rock"}
+          />
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  const redirectToChoice = () => {
+    props.history.push({
+      pathname: "/basic/choice",
+      state: { userChoice: props.componentName, gameType: props.source },
+    });
+  };
+  const outerCircleClass = `outerCircle ${props.componentName} ${props.source} hv-center`;
+  let innerCircleClass = `innerCircle ${props.source} hv-center`;
+  if (props.componentName === "empty") {
+    innerCircleClass += ` empty`;
+  }
+  return (
+    <Roll bottom delay={500}>
+      <div className={outerCircleClass} onClick={() => redirectToChoice()}>
+        <div className={innerCircleClass}>
+          {returnImageComponent(props.componentName)}
+        </div>
+      </div>
+    </Roll>
+  );
+}
+
+export default withRouter(GameBoard);

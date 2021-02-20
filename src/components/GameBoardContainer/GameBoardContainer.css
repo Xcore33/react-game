@@ -1,0 +1,42 @@
+.gameContainer {
+  height: 53vh;
+  background-size: 53vw 37vw;
+}
+
+.gameHalfContainer {
+  width: 100%;
+  min-height: 50%;
+}
+
+.gameUpperLeftItem {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  padding-right: 19px;
+  margin-top: auto;
+}
+
+.gameUpperRightItem {
+  margin-top: auto;
+  width: 50%;
+  padding-left: 19px;
+}
+
+@media only screen and (min-width: 600px) {
+  .gameContainer {
+    background-size: 28vw 17vw;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .gameUpperLeftItem {
+    padding-right: 85px;
+    padding-bottom: 7vh;
+  }
+  .gameUpperRightItem {
+    padding-left: 88px;
+    padding-bottom: 7vh;
+  }
+}
