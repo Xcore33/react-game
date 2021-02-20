@@ -1,0 +1,30 @@
+.header {
+    border: 2px solid hsl(347, 64%, 46%);
+    min-height: 100px;
+    border-radius: 10px;
+    font-weight: 700;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.score-container {
+    background-color: rgb(255, 255, 255);
+    min-height: 80%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.score-text {
+    color: hsl(347, 64%, 46%);
+    height: 25%;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.score-value {
+    color: hsl(229, 25%, 31%);
+    font-size: 50px;
+    height: 75%;
+    margin-top: 10px;
+}

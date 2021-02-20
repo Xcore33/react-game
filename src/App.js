@@ -1,9 +1,13 @@
 import "./App.css";
+import Header from './components/Header/Header';
+import Fade from 'react-reveal/Fade';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Learn React</header>
+      <Fade top>
+        <Header />
+      </Fade>
     </div>
   );
 }
