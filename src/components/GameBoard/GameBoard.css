@@ -1,22 +1,22 @@
 .outerCircle {
-  width: 120px;
-  height: 120px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
 }
 
 .outerCircle.paper {
-  background-image: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-  box-shadow: 0 10px 0px -5px rgb(41, 68, 194);
+  background-image: radial-gradient(hsl(240, 5%, 7%), hsl(71, 21%, 53%));
+  box-shadow: 0 10px 0px -2px rgb(66, 66, 54);
 }
 
 .outerCircle.scissors {
-  background-image: radial-gradient(hsl(39, 22%, 18%), hsl(40, 84%, 53%));
-  box-shadow: 0 10px 0px -5px rgb(199, 108, 27);
+  background-image: radial-gradient(hsl(240, 5%, 7%), hsl(71, 21%, 53%));
+  box-shadow: 0 10px 0px -2px rgb(199, 108, 27);
 }
 
 .outerCircle.rock {
-  background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-  box-shadow: 0 10px 0px -5px rgb(157, 23, 50);
+  background-image: radial-gradient(hsl(240, 5%, 7%), hsl(71, 21%, 53%));
+  box-shadow: 0 10px 0px -2px hsl(347, 64%, 46%);
 }
 
 .innerCircle {
@@ -24,17 +24,17 @@
   height: 85px;
   background: white;
   border-radius: 50%;
-  box-shadow: inset 0 10px 3px -7px rgb(188, 192, 218);
+  box-shadow: inset 0 6px 3px -7px rgb(188, 192, 218);
 }
 
-.innerCircle.empty {
+/* .innerCircle.empty {
   background: rgb(25, 46, 69);
   box-shadow: none;
-}
+} */
 
 .innerCircle > img {
-  width: 85px;
-  height: 85px;
+  width: 90px;
+  height: 90px;
   background: white;
   border-radius: 50%;
   box-shadow: inset 0 10px 3px -7px rgb(188, 192, 218);

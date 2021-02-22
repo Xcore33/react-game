@@ -11,17 +11,20 @@ function GameBoardContainer(props) {
               <div className="gameUpperLeftItem">
                 <GameBoard
                 componentName={'paper'}
+                source={'basic'}
                 />
               </div>
               <div className="gameUpperRightItem">
                 <GameBoard
                 componentName={'scissors'}
+                source={'basic'}
                 />
               </div>
             </div>
             <div className="gameHalfContainer hv-center">
               <GameBoard
                 componentName={'rock'}
+                source={'basic'}
               />
             </div>
           </div>

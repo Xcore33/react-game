@@ -1,0 +1,41 @@
+.rpsChoice {
+    min-height: 32vh;
+    color: white;
+}
+
+.rpsChoiceHalf {
+    width: 50%;
+}
+
+.rpsChoiceHalfUpperSection {
+    width: 100%;
+    min-height: 22vh;
+}
+
+.rpsChoiceHalfLowerSection {
+    width: 100%;
+    font-family: BarlowSemiCondensedBold;
+}
+
+.gameResult {
+    min-height: 20vh;
+}
+
+.gameResultText {
+    color: white;
+    font-family: BarlowSemiCondensedBold;
+    font-size: 40px;
+}
+
+.gameResultRuleText {
+    font-size: 24px;
+}
+
+.playAgainButton {
+    color: hsl(229, 13%, 41%);
+    width: 180px;
+}
+
+.playAgainButton:focus {
+    outline: 0 !important;
+}
