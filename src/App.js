@@ -14,20 +14,20 @@ function App() {
     }
     return initialScore;
   };
-  const [userScore, handleUserScore] = useState(() => {
+  const [gamerScore, handleGamerScore] = useState(() => {
     const initialScore = getInitialScore();
     return initialScore;
   });
   const [gameType] = useState("basic");
-  const updateUserScore = (score, event) => {
+  const updateGamerScore = (score, event) => {
     if (event === "update") {
-      handleUserScore(score);
+      handleGamerScore(score);
       if (gameType === "basic") {
         localStorage.setItem("basicGameScore", score);
       }
     } else {
       let existingScore = 0;
-      handleUserScore(existingScore);
+      handleGamerScore(existingScore);
     }
   };
   return (
@@ -38,7 +38,7 @@ function App() {
       >
         <div className="container" id="rpsElementsContainer">
           <Fade top>
-            <Header userScore={userScore} />
+            <Header gamerScore={gamerScore} />
           </Fade>
           <Switch>
             <Route path="/basic" exact={true}>
@@ -46,8 +46,8 @@ function App() {
             </Route>
             <Route path="/basic/choice">
               <GameBoardProcess
-                userScore={userScore}
-                updateUserScore={updateUserScore}
+                gamerScore={gamerScore}
+                updateGamerScore={updateGamerScore}
               />
             </Route>
             <Route path="/" exact={true}>
