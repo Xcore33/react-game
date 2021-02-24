@@ -18,12 +18,12 @@ function GameBoard(props) {
           />
         );
 
-      case "scissors":
+      case "scissor":
         return (
           <img
             src={scissorsIcon}
             className={`circleIcon ${props.source}`}
-            alt={"scissors"}
+            alt={"scissor"}
           />
         );
 

@@ -16,7 +16,7 @@ function GameBoardContainer(props) {
               </div>
               <div className="gameUpperRightItem">
                 <GameBoard
-                componentName={'scissors'}
+                componentName={'scissor'}
                 source={'basic'}
                 />
               </div>

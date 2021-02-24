@@ -5,7 +5,7 @@ function randomIntFromInterval(min, max) {
 export const getAIChoice = () => {
   const randomNumber = randomIntFromInterval(1, 3);
   const choices = ["paper", "scissor", "rock"];
-  return choices[randomNumber - 1];
+  return choices[randomNumber -1];
 };
 
 export const getGameResult = (gamerChoice, AIChoice) => {
