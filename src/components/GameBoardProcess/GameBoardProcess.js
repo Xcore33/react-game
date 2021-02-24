@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./GameBoardProcess.css";
 import GameBoard from "../GameBoard/GameBoard";
 import {
-  getHouseChoice,
+  getAIChoice,
   getGameResult,
   calculateGameScore,
 } from "../mathUtils";
@@ -11,38 +11,38 @@ import Fade from "react-reveal/Fade";
 import Flash from "react-reveal/Flash";
 import JoyrideComponent from "../Joyride/Joyride";
 function GameBoardProcess(props) {
-  const [houseChoice, updateHouseChoice] = useState("empty");
+  const [AIChoice, updateAIChoice] = useState("empty");
   const [gameResult, updateGameResult] = useState(null);
-  const [userChoice] = useState(props.location.state.userChoice);
+  const [gamerChoice] = useState(props.location.state.gamerChoice);
   const gameType = props.location.state.gameType;
-  const { userScore, updateUserScore } = props;
+  const { gamerScore, updateGamerScore } = props;
   useEffect(() => {
     const timer = setTimeout(() => {
-      const randomHouseChoice = getHouseChoice(gameType);
-      updateHouseChoice(randomHouseChoice);
+      const randomAIChoice = getAIChoice(gameType);
+      updateAIChoice(randomAIChoice);
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
   useEffect(() => {
-    if (houseChoice !== "empty") {
+    if (AIChoice !== "empty") {
       const timer = setTimeout(() => {
-        const gameResult = getGameResult(userChoice, houseChoice);
-        const updatedScore = calculateGameScore(userScore, gameResult);
-        updateUserScore(updatedScore, "update");
+        const gameResult = getGameResult(gamerChoice, AIChoice);
+        const updatedScore = calculateGameScore(gamerScore, gameResult);
+        updateGamerScore(updatedScore, "update");
         updateGameResult(gameResult);
       }, 800);
       return () => clearTimeout(timer);
     }
-  }, [houseChoice, userChoice]);
+  }, [AIChoice, gamerChoice]);
   const renderChoiceComponent = (componentName, text) => {
     return (
-      <div className="rpsChoiceHalf hv-center flex-column">
-        <div className="rpsChoiceHalfUpperSection hv-center">
+      <div className="itemHalf hv-center flex-column">
+        <div className="itemHalfUpperSection hv-center">
           <Fade right when={componentName !== "empty"}>
             <GameBoard componentName={componentName} source={"basic"} />
           </Fade>
         </div>
-        <div className="rpsChoiceHalfLowerSection text-center mt-2">{text}</div>
+        <div className="itemHalfLowerSection text-center mt-2">{text}</div>
       </div>
     );
   };
@@ -77,9 +77,9 @@ function GameBoardProcess(props) {
         localStorageItem={"hasSeenBasicGameResult"}
         runCondition={gameResult}
       />
-      <div className="rpsChoice col-10 col-lg-6 mt-3 hv-center">
-        {renderChoiceComponent(userChoice, "YOU PICKED")}
-        {renderChoiceComponent(houseChoice, "THE HOUSE PICKED")}
+      <div className="item col-10 col-lg-6 mt-3 hv-center">
+        {renderChoiceComponent(gamerChoice, "YOU PICKED")}
+        {renderChoiceComponent(AIChoice, "AI PICKED")}
       </div>
       <div className="gameResult col-10 col-lg-6 mt-2 hv-center">
         <Flash bottom when={gameResult !== null}>

@@ -1,6 +1,7 @@
 .App {
   background-image:linear-gradient(hsl(51, 40%, 65%), hsl(61, 24%, 50%));
   min-height: 100vh;
+  max-width: 100vw;
 }
 
 .hv-center {

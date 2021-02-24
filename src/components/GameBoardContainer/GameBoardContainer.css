@@ -1,11 +1,12 @@
 .gameContainer {
-  height: 53vh;
-  background-size: 53vw 37vw;
+  height: 50vh;
+  background-size: 50vw 37vw;
 }
 
 .gameHalfContainer {
   width: 100%;
   min-height: 50%;
+  display: flex;
 }
 
 .gameUpperLeftItem {

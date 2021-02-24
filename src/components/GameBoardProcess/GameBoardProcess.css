@@ -1,20 +1,19 @@
-.rpsChoice {
+.item {
     min-height: 32vh;
     color: white;
 }
 
-.rpsChoiceHalf {
+.itemHalf {
     width: 50%;
 }
 
-.rpsChoiceHalfUpperSection {
+.itemHalfUpperSection {
     width: 100%;
     min-height: 22vh;
 }
 
-.rpsChoiceHalfLowerSection {
+.itemHalfLowerSection {
     width: 100%;
-    font-family: BarlowSemiCondensedBold;
 }
 
 .gameResult {
@@ -23,7 +22,6 @@
 
 .gameResultText {
     color: white;
-    font-family: BarlowSemiCondensedBold;
     font-size: 40px;
 }
 

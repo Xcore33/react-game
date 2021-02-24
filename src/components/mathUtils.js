@@ -2,17 +2,17 @@ function randomIntFromInterval(min, max) {
   return Math.floor((Math.random() % max) * (max - min + 1) + min);
 }
 
-export const getHouseChoice = () => {
+export const getAIChoice = () => {
   const randomNumber = randomIntFromInterval(1, 3);
   const choices = ["paper", "scissor", "rock"];
   return choices[randomNumber - 1];
 };
 
-export const getGameResult = (userChoice, houseChoice) => {
+export const getGameResult = (gamerChoice, AIChoice) => {
   const gameResultChoices = [
     {
-      text: "YOU TIED",
-      value: "tie",
+      text: "DRAW",
+      value: "draw",
     },
     {
       text: "YOU LOSE",
@@ -29,41 +29,41 @@ export const getGameResult = (userChoice, houseChoice) => {
     paper: { name: "Paper", defeats: ["rock"] },
     scissor: { name: "Scissor", defeats: ["paper"] },
   };
-  const processMove = function (userChoice, houseChoice) {
-    if (userChoice === houseChoice) {
+  const processMove = function (gamerChoice, AIChoice) {
+    if (gamerChoice === AIChoice) {
       return gameResultChoices[0];
-    } else if (choices[userChoice].defeats.indexOf(houseChoice) > -1) {
+    } else if (choices[gamerChoice].defeats.indexOf(AIChoice) > -1) {
       const result = gameResultChoices[2];
-      const rule = getGameResultRuleText(userChoice, houseChoice);
+      const rule = getGameResultRuleText(gamerChoice, AIChoice);
       result.rule = rule;
       return result;
     } else {
       const result = gameResultChoices[1];
-      const rule = getGameResultRuleText(houseChoice, userChoice);
+      const rule = getGameResultRuleText(AIChoice, gamerChoice);
       result.rule = rule;
       return result;
     }
   };
-  return processMove(userChoice, houseChoice);
+  return processMove(gamerChoice, AIChoice);
 };
 
-export const calculateGameScore = (userScore, gameResult) => {
+export const calculateGameScore = (gamerScore, gameResult) => {
   switch (gameResult.value) {
     case "win":
-      return userScore + 1;
+      return gamerScore + 1;
 
     case "lose":
-      if (userScore > 0) {
-        return userScore;
+      if (gamerScore > 0) {
+        return gamerScore;
       } else {
-        return userScore;
+        return gamerScore;
       }
 
-    case "tie":
-      return userScore;
+    case "draw":
+      return gamerScore;
 
     default:
-      return userScore;
+      return gamerScore;
   }
 };
 

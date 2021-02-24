@@ -44,7 +44,7 @@ function GameBoard(props) {
   const redirectToChoice = () => {
     props.history.push({
       pathname: "/basic/choice",
-      state: { userChoice: props.componentName, gameType: props.source },
+      state: { gamerChoice: props.componentName, gameType: props.source },
     });
   };
   const outerCircleClass = `outerCircle ${props.componentName} ${props.source} hv-center`;
