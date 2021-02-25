@@ -9,7 +9,7 @@
   box-shadow: 0 10px 0px -2px rgb(66, 66, 54);
 }
 
-.outerCircle.scissors {
+.outerCircle.scissor {
   background-image: radial-gradient(hsl(240, 5%, 7%), hsl(71, 21%, 53%));
   box-shadow: 0 10px 0px -2px rgb(199, 108, 27);
 }
