@@ -15,9 +15,9 @@ function Header(props) {
   };
   return (
     <div className="row d-flex justify-content-center">
-      <div className="header col-10 col-mg-6">
-        <div className="row h-100 d-flex align-items-center px-2">
-          <div className="col-8 col-lg-10 d-flex flex-column">
+      <div className="header col-12 col-mg-6 ">
+        <div className="row h-100 align-items-center px-2">
+          <div className="col-12 col-lg-10 ">
             {renderGameName()}
           </div>
           <div className="col-6 col-lg-2 score-container">

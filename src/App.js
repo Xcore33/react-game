@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
+import FooterPage from "./components/Footer/Footer";
 import GameBoardContainer from "./components/GameBoardContainer/GameBoardContainer";
 import GameBoardProcess from "./components/GameBoardProcess/GameBoardProcess";
 import Fade from "react-reveal/Fade";
@@ -36,7 +37,7 @@ function App() {
         className="App d-flex flex-column align-items-center"
         id="mainElementContainer"
       >
-        <div className="container" id="rpsElementsContainer">
+        <div className="container">
           <Fade top>
             <Header gamerScore={gamerScore} />
           </Fade>
@@ -63,6 +64,7 @@ function App() {
             </div>
           </Fade>
         </div>
+        <FooterPage />
       </div>
     </Router>
   );

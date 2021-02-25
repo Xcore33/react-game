@@ -26,3 +26,6 @@
   padding: 0px;
 }
 
+.container {
+  max-width: 100%;
+}
