@@ -64,7 +64,7 @@ function App() {
             >
               <div className="col-12 col-lg-6 mt-4 d-flex flex-row buttonsContainer">
                 <RulesButton />
-                <ResetButton updateGamerScore={updateGamerScore}/>
+                <ResetButton updateGamerScore={updateGamerScore} />
               </div>
             </div>
           </Fade>

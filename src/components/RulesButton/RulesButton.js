@@ -1,69 +1,62 @@
-import React from "react";
-import "./RulesButton.css";
-import Rules from "../../assets/images/rules.png";
-function RulesButton(props) {
-  const renderRules = () => {
-    return (
-      <div className="rulesImageContainer hv-center">
-        <img
-          src={Rules}
-          className="rulesImage"
-          alt={"rulesImage"}
-        />
-      </div>
-    );
-  };
+import React, { Component } from 'react';
+import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBCol, MDBRow } from
+'mdbreact';
+
+class RulesButton extends Component {
+state = {
+  modal16: false
+}
+
+toggle = nr => () => {
+  let modalNumber = 'modal' + nr
+  this.setState({
+    [modalNumber]: !this.state[modalNumber]
+  });
+}
+
+render() {
   return (
-    <div className={"col-4  d-flex justify-content-center"}>
-      <button
-        type="button"
-        className="btn lowerButton"
-        data-toggle="modal"
-        data-target="#rulesModal"
-      >
-        <i className={"fa fa-file-text mr-1"} aria-hidden="true"></i>
-        RULES
-      </button>
-      <div
-        className="modal fade"
-        id="rulesModal"
-        tabIndex="-1"
-        role="dialog"
-        aria-labelledby="rulesModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog" role="document">
-          <div className="modal-content modalContainer">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Rules
-              </h5>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div className="modal-body modalBodyContainer hv-center">
-              {renderRules()}
-            </div>
-            <div className="modal-footer hv-center">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+      <MDBContainer>
+        <MDBBtn onClick={this.toggle(16)}>Rules</MDBBtn>
+        <MDBModal isOpen={this.state.modal16} toggle={this.toggle(16)}>
+          <MDBModalHeader toggle={this.toggle(16)}>MDBModal title</MDBModalHeader>
+          <MDBModalBody>
+            <MDBContainer fluid className="text-white">
+              <MDBRow>
+                <MDBCol md="4" className="bg-info">.col-md-4</MDBCol>
+                <MDBCol md="4" className="ml-auto bg-info">.col-md-4 .ml-auto</MDBCol>
+              </MDBRow>
+              <br />
+              <MDBRow>
+                <MDBCol md="3" className="ml-auto bg-info">.col-md-3 .ml-auto</MDBCol>
+                <MDBCol md="2" className="ml-auto bg-info">.col-md-2 .ml-auto</MDBCol>
+              </MDBRow>
+              <MDBRow>
+                <MDBCol md="6" className="ml-5 bg-info">.col-md-6 .ml-5</MDBCol>
+              </MDBRow>
+              <br />
+              <MDBRow>
+                <MDBCol sm="9" className="bg-info">
+                  Level 1: .col-sm-9
+                  <MDBRow>
+                    <MDBCol sm="6" className="bg-info">
+                      Level 2: .col-8 .col-sm-6
+                    </MDBCol>
+                    <MDBCol sm="6" className="bg-info">
+                      Level 2: .col-4 .col-sm-6
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCol>
+              </MDBRow>
+            </MDBContainer>
+          </MDBModalBody>
+          <MDBModalFooter>
+            <MDBBtn color="secondary" onClick={this.toggle(16)}>Close</MDBBtn>
+          </MDBModalFooter>
+        </MDBModal>
+      </MDBContainer>
+    );
+  }
 }
 
 export default RulesButton;
