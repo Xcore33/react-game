@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import FooterPage from "./components/Footer/Footer";
 import GameBoardContainer from "./components/GameBoardContainer/GameBoardContainer";
 import GameBoardProcess from "./components/GameBoardProcess/GameBoardProcess";
+import RulesButton from "./components/RulesButton/RulesButton";
 import Fade from "react-reveal/Fade";
 
 function App() {
@@ -60,7 +61,10 @@ function App() {
               className="row d-flex justify-content-center"
               id={"rulesButtonsContainer"}
             >
-              <div className="col-12 col-lg-6 mt-4 d-flex flex-row buttonsContainer"></div>
+              <div className="col-12 col-lg-6 mt-4 d-flex flex-row buttonsContainer">
+                <RulesButton />
+                {/* <ResetButton updateUserScore={updateGamerScore} /> */}
+              </div>
             </div>
           </Fade>
         </div>
