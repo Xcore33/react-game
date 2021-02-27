@@ -5,7 +5,7 @@ import RSLogo from "../../assets/svg/rs_school_js.svg";
 
 const FooterPage = () => {
   return (
-    <MDBFooter color="blue" className="font-small pt-2" id="footer">
+    <MDBFooter color="orange" className="font-small pt-2" id="footer">
       <li className="list-unstyled">
         <a href="https://rs.school/js/">
           <img className="rsLogo" src={RSLogo} alt={"logo"} />

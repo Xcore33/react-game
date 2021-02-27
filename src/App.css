@@ -1,8 +1,7 @@
 .App {
-  /* background-image: #40c4ff; */
   min-height: 100vh;
   max-width: 100vw;
-  background-color: aliceblue
+  background-color: #BDBDBD
 }
 
 .hv-center {

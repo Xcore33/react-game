@@ -1,12 +1,12 @@
 .header {
-  border: 2px solid #40c4ff;
+  border: 2px solid #fd7e14;
   min-height: 100px;
   border-radius: 10px;
   font-weight: 900;
   color: black;
   font-size: 22px;
   margin: 0 2px 0 2px;
-  background-color: #40c4ff;
+  background-color: #ffc107;
 }
 
 .score-container {
@@ -14,10 +14,11 @@
   min-height: 50%;
   border-radius: 10px;
   text-align: center;
+  border: 2px solid #fd7e14;
 }
 
 .score-text {
-  color: #007bff;
+  color: #fd7e14;
   height: 40%;
   font-size: 18px;
   margin-top: 2px;
@@ -37,6 +38,7 @@
   justify-content: space-between;
   max-width: 360px;
   margin-right: auto;
+  text-shadow: 1px 1px 3px #fd7e14;
 }
 
 .row {
