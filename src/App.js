@@ -8,8 +8,9 @@ import AdvancedGame from "./components/AdvancedGame//AdvancedGame";
 import GameBoardProcess from "./components/GameBoardProcess/GameBoardProcess";
 import RulesButton from "./components/RulesButton/RulesButton";
 import ResetButton from "./components/ResetButton/ResetButton";
-import SwitchButton from './components/SwitchButton/SwitchButton';
+import SwitchButton from "./components/SwitchButton/SwitchButton";
 import Fade from "react-reveal/Fade";
+import JoyrideComponent from "./components/Joyride/Joyride";
 
 function App() {
   const getInitialScore = () => {
@@ -29,9 +30,20 @@ function App() {
       handleGamerScore(score);
       if (gameType === "basic") {
         localStorage.setItem("basicGameScore", score);
+      } else {
+        localStorage.setItem("advancedGameScore", score);
       }
     } else {
       let existingScore = 0;
+      const existingGameType = gameType;
+      if (
+        existingGameType === "advanced" &&
+        localStorage.getItem("basicGameScore")
+      ) {
+        existingScore = parseInt(localStorage.getItem("basicGameScore"), 10);
+      } else if (localStorage.getItem("advancedGameScore")) {
+        existingScore = parseInt(localStorage.getItem("advancedGameScore"), 10);
+      }
       handleGamerScore(existingScore);
     }
   };
@@ -41,6 +53,9 @@ function App() {
         className="App d-flex flex-column align-items-center"
         id="mainElementContainer"
       >
+        <JoyrideComponent
+          runCondition={gameType === "advanced"}
+        />
         <div className="container">
           <Fade top>
             <Header gamerScore={gamerScore} />
@@ -56,8 +71,8 @@ function App() {
               />
             </Route>
             <Route path="/advanced" exact={true}>
-            <AdvancedGame />
-          </Route>
+              <AdvancedGame />
+            </Route>
             <Route path="/" exact={true}>
               <GameBoardContainer />
             </Route>
@@ -68,12 +83,12 @@ function App() {
               id={"rulesButtonsContainer"}
             >
               <div className="d-flex flex-row buttonsContainer">
-                <RulesButton />
+                <RulesButton gameType={gameType}/>
                 <SwitchButton
-              gameType={gameType}
-              switchGameMode={switchGameMode}
-              updateUserScore={updateGamerScore}
-            />
+                  gameType={gameType}
+                  switchGameMode={switchGameMode}
+                  updateGamerScore={updateGamerScore}
+                />
                 <ResetButton updateGamerScore={updateGamerScore} />
               </div>
             </div>

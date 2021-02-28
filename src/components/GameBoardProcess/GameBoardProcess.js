@@ -74,7 +74,6 @@ function GameBoardProcess(props) {
   return (
     <div className="row d-flex row d-flex align-items-center flex-column">
       <JoyrideComponent
-        localStorageItem={"hasSeenBasicGameResult"}
         runCondition={gameResult}
       />
       <div className="item col-10 col-lg-6 mt-3 hv-center">

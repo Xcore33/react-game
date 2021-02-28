@@ -10,7 +10,7 @@ function SwitchButton(props) {
       : "fa-caret-square-o-down";
   const changeGameMode = () => {
     props.switchGameMode(switchText);
-    props.updateUserScore(0, "switch");
+    props.updateGamerScore(0, "switch");
     props.history.push(`/${switchText}`);
   };
   return (
