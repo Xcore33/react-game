@@ -5,6 +5,10 @@ function Header(props) {
   const renderGameName = () => {
     let gameName = ["ROCK", "PAPER", "SCISSORS"];
     let ItemClass = "gameName";
+    if(props.gameType === 'advanced') {
+      gameName = gameName.concat('RING', 'STICK');
+      ItemClass = 'advancedOptions';
+  }
     return (
       <div className={ItemClass}>
         {gameName.map((item, index) => {

@@ -2,10 +2,16 @@ function randomIntFromInterval(min, max) {
   return Math.floor((Math.random() % max) * (max - min + 1) + min);
 }
 
-export const getAIChoice = () => {
-  const randomNumber = randomIntFromInterval(1, 3);
-  const choices = ["paper", "scissor", "rock"];
-  return choices[randomNumber -1];
+export const getAIChoice = (type) => {
+  if (type === "basic") {
+    const randomNumber = randomIntFromInterval(1, 3);
+    const choices = ["paper", "scissor", "rock"];
+    return choices[randomNumber - 1];
+  } else if (type === "advanced") {
+    const randomNumber = randomIntFromInterval(1, 5);
+    const choices = ["paper", "scissor", "rock", "stick", "ring"];
+    return choices[randomNumber - 1];
+  }
 };
 
 export const getGameResult = (gamerChoice, AIChoice) => {
@@ -25,9 +31,11 @@ export const getGameResult = (gamerChoice, AIChoice) => {
   ];
 
   const choices = {
-    rock: { name: "Rock", defeats: ["scissor"] },
-    paper: { name: "Paper", defeats: ["rock"] },
-    scissor: { name: "Scissor", defeats: ["paper"] },
+    rock : {name: "Rock", defeats: ["scissor","stick"]},
+    paper: {name: "Paper", defeats: ["rock", "ring"]},
+    scissor: {name: "Scissor", defeats: ["paper", "stick"]},
+    stick: {name: "Stick", defeats:["paper","ring"]},
+    ring: {name: "Ring", defeats:["scissor","rock"]}
   };
   const processMove = function (gamerChoice, AIChoice) {
     if (gamerChoice === AIChoice) {
@@ -70,13 +78,24 @@ export const calculateGameScore = (gamerScore, gameResult) => {
 const getGameResultRuleText = (victorChoice, loserChoice) => {
   const rules = {
     rock: {
+      stick: "Rock crushes stick",
       scissor: "Rock crushes scissors",
     },
     paper: {
+      ring: "Paper covers ring",
       rock: "Paper covers rock",
     },
     scissor: {
+      stick: "Scissors cuts stick",
       paper: "Scissors cuts paper",
+    },
+    stick: {
+      ring: "Stick spins around itself ring",
+      paper: "Stick perforates paper",
+    },
+    ring: {
+      scissor: "Ring breaks scissors",
+      rock: "Ring harder than rock",
     },
   };
   return rules[victorChoice][loserChoice];

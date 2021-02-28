@@ -3,6 +3,8 @@ import "./GameBoard.css";
 import paperIcon from "../../assets/images/paper.png";
 import scissorsIcon from "../../assets/images/scissors.png";
 import rockIcon from "../../assets/images/rock.png";
+import ringIcon from "../../assets/images/ring.png";
+import stickIcon from "../../assets/images/stick.png";
 import { withRouter } from "react-router-dom";
 import Roll from "react-reveal/Roll";
 
@@ -33,6 +35,24 @@ function GameBoard(props) {
             src={rockIcon}
             className={`circleIcon ${props.source}`}
             alt={"rock"}
+          />
+        );
+
+      case "ring":
+        return (
+          <img
+            src={ringIcon}
+            className={`circleIcon ${props.source}`}
+            alt={"ring"}
+          />
+        );
+
+      case "stick":
+        return (
+          <img
+            src={stickIcon}
+            className={`circleIcon ${props.source}`}
+            alt={"stick"}
           />
         );
 

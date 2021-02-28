@@ -8,6 +8,7 @@ import {
   MDBModalFooter,
 } from "mdbreact";
 import RulesImage from "../../assets/images/rules.png";
+// import AdvancedRulesImage from "../../assets/images/advanced-rules.png";
 import "./RulesButton.css";
 
 class RulesButton extends Component {

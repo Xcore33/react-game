@@ -16,6 +16,14 @@
   box-shadow: 0 10px 0px -2px #fd7e14;
 }
 
+.outerCircle.stick {
+  box-shadow: 0 10px 0px 0 rgb(66, 66, 54);
+}
+
+.outerCircle.ring {
+  box-shadow: 0 10px 0px -2px #fd7e14;
+}
+
 .innerCircle > img {
   width: 7vw;
   height: 7vw;

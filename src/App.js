@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import FooterPage from "./components/Footer/Footer";
 import GameBoardContainer from "./components/GameBoardContainer/GameBoardContainer";
+import AdvancedGame from "./components/AdvancedGame//AdvancedGame";
 import GameBoardProcess from "./components/GameBoardProcess/GameBoardProcess";
 import RulesButton from "./components/RulesButton/RulesButton";
 import ResetButton from "./components/ResetButton/ResetButton";
+import SwitchButton from './components/SwitchButton/SwitchButton';
 import Fade from "react-reveal/Fade";
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
     const initialScore = getInitialScore();
     return initialScore;
   });
-  const [gameType] = useState("basic");
+  const [gameType, switchGameMode] = useState("basic");
   const updateGamerScore = (score, event) => {
     if (event === "update") {
       handleGamerScore(score);
@@ -53,6 +55,9 @@ function App() {
                 updateGamerScore={updateGamerScore}
               />
             </Route>
+            <Route path="/advanced" exact={true}>
+            <AdvancedGame />
+          </Route>
             <Route path="/" exact={true}>
               <GameBoardContainer />
             </Route>
@@ -64,6 +69,11 @@ function App() {
             >
               <div className="d-flex flex-row buttonsContainer">
                 <RulesButton />
+                <SwitchButton
+              gameType={gameType}
+              switchGameMode={switchGameMode}
+              updateUserScore={updateGamerScore}
+            />
                 <ResetButton updateGamerScore={updateGamerScore} />
               </div>
             </div>
