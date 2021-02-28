@@ -1,57 +1,58 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBCol, MDBRow } from
-'mdbreact';
+import React, { Component } from "react";
+import {
+  MDBContainer,
+  MDBBtn,
+  MDBModal,
+  MDBModalBody,
+  MDBModalHeader,
+  MDBModalFooter,
+} from "mdbreact";
+import RulesImage from "../../assets/images/rules.png";
+import "./RulesButton.css";
 
 class RulesButton extends Component {
-state = {
-  modal16: false
-}
+  state = {
+    modal14: false,
+  };
 
-toggle = nr => () => {
-  let modalNumber = 'modal' + nr
-  this.setState({
-    [modalNumber]: !this.state[modalNumber]
-  });
-}
+  toggle = (nr) => () => {
+    let modalNumber = "modal" + nr;
+    this.setState({
+      [modalNumber]: !this.state[modalNumber],
+    });
+  };
 
-render() {
-  return (
+  render() {
+    return (
       <MDBContainer>
-        <MDBBtn onClick={this.toggle(16)}>Rules</MDBBtn>
-        <MDBModal isOpen={this.state.modal16} toggle={this.toggle(16)}>
-          <MDBModalHeader toggle={this.toggle(16)}>MDBModal title</MDBModalHeader>
-          <MDBModalBody>
-            <MDBContainer fluid className="text-white">
-              <MDBRow>
-                <MDBCol md="4" className="bg-info">.col-md-4</MDBCol>
-                <MDBCol md="4" className="ml-auto bg-info">.col-md-4 .ml-auto</MDBCol>
-              </MDBRow>
-              <br />
-              <MDBRow>
-                <MDBCol md="3" className="ml-auto bg-info">.col-md-3 .ml-auto</MDBCol>
-                <MDBCol md="2" className="ml-auto bg-info">.col-md-2 .ml-auto</MDBCol>
-              </MDBRow>
-              <MDBRow>
-                <MDBCol md="6" className="ml-5 bg-info">.col-md-6 .ml-5</MDBCol>
-              </MDBRow>
-              <br />
-              <MDBRow>
-                <MDBCol sm="9" className="bg-info">
-                  Level 1: .col-sm-9
-                  <MDBRow>
-                    <MDBCol sm="6" className="bg-info">
-                      Level 2: .col-8 .col-sm-6
-                    </MDBCol>
-                    <MDBCol sm="6" className="bg-info">
-                      Level 2: .col-4 .col-sm-6
-                    </MDBCol>
-                  </MDBRow>
-                </MDBCol>
-              </MDBRow>
-            </MDBContainer>
+        <MDBBtn color="orange" onClick={this.toggle(14)}>
+          Rules
+        </MDBBtn>
+        <MDBModal
+          overflowScroll={false}
+          isOpen={this.state.modal14}
+          toggle={this.toggle(14)}
+          centered
+        >
+          <MDBModalHeader toggle={this.toggle(14)}>
+            Rules & Hotkeys
+          </MDBModalHeader>
+          <MDBModalBody className="text-center">
+            <img
+              src={RulesImage}
+              className="basicRulesImage"
+              alt={"basicRulesImage"}
+            />{" "}
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
           </MDBModalBody>
           <MDBModalFooter>
-            <MDBBtn color="secondary" onClick={this.toggle(16)}>Close</MDBBtn>
+            <MDBBtn color="orange" onClick={this.toggle(14)}>
+              Close
+            </MDBBtn>
           </MDBModalFooter>
         </MDBModal>
       </MDBContainer>

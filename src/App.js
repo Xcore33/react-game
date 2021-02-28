@@ -62,7 +62,7 @@ function App() {
               className="row d-flex justify-content-center"
               id={"rulesButtonsContainer"}
             >
-              <div className="col-12 col-lg-6 mt-4 d-flex flex-row buttonsContainer">
+              <div className="d-flex flex-row buttonsContainer">
                 <RulesButton />
                 <ResetButton updateGamerScore={updateGamerScore} />
               </div>

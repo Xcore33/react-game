@@ -1,26 +1,5 @@
-.lowerButton {
-  background: transparent;
-  border: 2px solid hsl(217, 16%, 45%);
-  font-family: 'Times New Roman', Times, serif;
-  letter-spacing: 2px;
-  color: white;
-  text-transform: uppercase;
-  font-size: 13px;
-  max-width: 102px;
+.basicRulesImage {
+width: 200px;
+height: 200px;
 }
 
-.rulesImage {
-  width: 275px;
-}
-
-@media only screen and (max-width: 600px) {
-  .modalBodyContainer {
-    min-height: 68vh;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .modalContainer {
-    margin-top: 55px;
-  }
-}
