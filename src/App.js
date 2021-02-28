@@ -58,7 +58,7 @@ function App() {
         />
         <div className="container">
           <Fade top>
-            <Header gamerScore={gamerScore} />
+            <Header gamerScore={gamerScore} gameType={gameType}/>
           </Fade>
           <Switch>
             <Route path="/basic" exact={true}>
