@@ -32,7 +32,8 @@
   line-height: 30px;
 }
 
-.gameName {
+.gameName,
+.advancedOptions {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -49,7 +50,8 @@
   .score-container {
     max-width: 360px;
   }
-  .gameName {
+  .gameName,
+  .advancedOptions {
     margin-left: auto;
   }
 }

@@ -10,7 +10,6 @@ import RulesButton from "./components/RulesButton/RulesButton";
 import ResetButton from "./components/ResetButton/ResetButton";
 import SwitchButton from "./components/SwitchButton/SwitchButton";
 import Fade from "react-reveal/Fade";
-import JoyrideComponent from "./components/Joyride/Joyride";
 
 function App() {
   const getInitialScore = () => {
@@ -53,9 +52,6 @@ function App() {
         className="App d-flex flex-column align-items-center"
         id="mainElementContainer"
       >
-        <JoyrideComponent
-          runCondition={gameType === "advanced"}
-        />
         <div className="container">
           <Fade top>
             <Header gamerScore={gamerScore} gameType={gameType}/>

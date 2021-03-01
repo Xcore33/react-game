@@ -9,7 +9,7 @@ import {
 import { withRouter } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import Flash from "react-reveal/Flash";
-import JoyrideComponent from "../Joyride/Joyride";
+
 function GameBoardProcess(props) {
   const [AIChoice, updateAIChoice] = useState("empty");
   const [gameResult, updateGameResult] = useState(null);
@@ -62,7 +62,7 @@ function GameBoardProcess(props) {
           <span>{gameResult.text}</span>
           <button
             type="button"
-            className="btn btn-light playAgainButton"
+            className="btn btn-orange playAgainButton"
             onClick={() => redirectToHome()}
           >
             PLAY AGAIN
@@ -73,9 +73,6 @@ function GameBoardProcess(props) {
   };
   return (
     <div className="row d-flex row d-flex align-items-center flex-column">
-      <JoyrideComponent
-        runCondition={gameResult}
-      />
       <div className="item col-10 col-lg-6 mt-3 hv-center">
         {renderChoiceComponent(gamerChoice, "YOU PICKED")}
         {renderChoiceComponent(AIChoice, "AI PICKED")}
